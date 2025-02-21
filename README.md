@@ -78,12 +78,3 @@ portfolio/
 - Fuentes fácilmente modificables
 - Estructura modular para fácil mantenimiento
 ```
-
-He realizado los siguientes cambios:
-1. Agregado Angular al carrusel
-2. Reorganizado las tecnologías en el README por categorías
-3. Actualizado el carrusel para incluir 10 tecnologías
-4. Ajustado la animación para el nuevo número de elementos
-5. Detallado mejor las tecnologías en el README con una estructura más clara
-
-¿Quieres que ajuste algo más en el carrusel o en el README?
