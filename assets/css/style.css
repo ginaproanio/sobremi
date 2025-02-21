@@ -1,0 +1,609 @@
+:root {
+    /* Paleta monocromática profesional */
+    --primary: #1a1a1a;
+    --secondary: #333333;
+    --accent: #666666;
+    --background: #ffffff;
+    --text: #2c2c2c;
+    --card-bg: #f5f5f5;
+    --border: #e0e0e0;
+    --hover: #0066cc;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--background);
+}
+
+/* Header y navegación */
+.hero {
+    min-height: 100vh;
+    padding-top: 120px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 1.2rem 0;
+    z-index: 1000;
+}
+
+.nav .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 3rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+}
+
+.nav a:hover {
+    color: var(--hover);
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.subtitle {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.headline {
+    font-size: 1.25rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;  /* Reducido de 1.5rem */
+    line-height: 1.6;
+}
+
+.cta-group {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.cta-primary, .cta-secondary {
+    padding: 0.8rem 1.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+.cta-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.cta-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.cta-primary:hover, .cta-secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.hero-image {
+    width: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Sección de habilidades */
+.skills {
+    padding: 6rem 0;
+    background: var(--card-bg);
+}
+
+.skills-intro {
+    text-align: center;
+    color: var(--secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 1;
+    display: block;
+    width: 100%;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    padding: 2rem;
+    background: var(--background);
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Sección de proyectos */
+.projects {
+    padding: 6rem 0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  /* Reducido de 300px */
+    gap: 1.5rem;  /* Reducido de 2rem */
+}
+
+.project {
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 1.2rem;  /* Reducido de 1.5rem */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;     /* Reducido de 1rem */
+}
+
+.project-content h3 {
+    color: var(--primary);
+    font-size: 1.2rem;  /* Reducido de 1.4rem */
+    margin-bottom: 0.5rem;  /* Reducido de 1rem */
+    font-weight: 600;
+}
+
+.project-content p {
+    color: var(--secondary);
+    font-size: 0.9rem;  /* Reducido de 1rem */
+    line-height: 1.4;   /* Reducido de 1.6 */
+    margin-bottom: 0.75rem;  /* Reducido de 1.5rem */
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;    /* Reducido de 0.5rem */
+    margin-bottom: 0.75rem;  /* Reducido de 1.5rem */
+}
+
+.tech-tag {
+    background: var(--card-bg);
+    color: var(--text);
+    padding: 0.3rem 0.6rem;  /* Reducido de 0.4rem 0.8rem */
+    border-radius: 4px;
+    font-size: 0.8rem;  /* Reducido de 0.85rem */
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;  /* Reducido de 0.5rem */
+}
+
+.tech-tag i {
+    color: var(--accent);
+}
+
+.tech-tag:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: var(--background);
+}
+
+.project-links {
+    display: flex;
+    gap: 0.75rem;  /* Reducido de 1rem */
+    margin-top: auto;
+}
+
+.project-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;  /* Reducido de 0.5rem */
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 0.85rem;  /* Reducido de 0.9rem */
+    padding: 0.4rem 0.8rem;  /* Reducido de 0.5rem 1rem */
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    border: 1px solid var(--border);
+}
+
+.project-links a:hover {
+    background: var(--card-bg);
+    color: var(--hover);
+}
+
+.github-link i, .demo-link i {
+    font-size: 1.1rem;
+}
+
+/* Footer y contacto */
+.contact {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.contact .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.contact .section-title {
+    display: none;
+}
+
+.contact-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    flex-direction: row;
+}
+
+.email-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.email-link:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.email-link i {
+    font-size: 1.1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* Estilos del carrusel de tecnologías */
+.tech-carousel {
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    padding: 2rem 0;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.tech-track {
+    display: flex;
+    animation: scroll 25s linear infinite;
+    width: fit-content;
+}
+
+.tech-track i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin: 0 2rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.tech-track i:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    color: var(--hover);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Efecto de desvanecimiento en los bordes */
+.tech-carousel::before,
+.tech-carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100px;
+    z-index: 2;
+}
+
+.tech-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, var(--card-bg) 0%, transparent 100%);
+}
+
+.tech-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, var(--card-bg) 0%, transparent 100%);
+}
+
+/* Estilo para el slogan */
+.about {
+    padding: 6rem 0;
+    background-color: var(--background);
+    position: relative;
+}
+
+.slogan {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.4;
+    color: var(--primary);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+}
+
+.slogan::before,
+.slogan::after {
+    content: '"';
+    font-family: 'Georgia', serif;
+    font-size: 4rem;
+    color: var(--accent);
+    opacity: 0.2;
+    position: absolute;
+}
+
+.slogan::before {
+    top: -1rem;
+    left: 0;
+}
+
+.slogan::after {
+    bottom: -2rem;
+    right: 0;
+}
+
+/* Estilo para los títulos de sección */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+/* Ajustes para mantener la consistencia en las secciones */
+.skills, .projects {
+    padding: 6rem 0;
+}
+
+.skills {
+    background: var(--card-bg);
+}
+
+.projects {
+    background: var(--background);
+}
+
+/* Ajuste específico para la sección de skills */
+.skills {
+    background: var(--card-bg);
+}
+
+.skills .tech-carousel {
+    margin: 2rem 0;
+    background: transparent;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .hero-image {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .cta-group {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero {
+        padding-top: 100px;
+    }
+
+    .slogan {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .nav ul {
+        gap: 1.5rem;
+    }
+    
+    .nav a {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
+
+    .slogan::before,
+    .slogan::after {
+        font-size: 3rem;
+    }
+
+    .email-link {
+        font-size: 1rem;
+    }
+
+    .headline {
+        font-size: 1.1rem;
+    }
+
+    .skills-intro {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slogan {
+        font-size: 1.25rem;
+        padding: 1rem;
+    }
+
+    .slogan::before,
+    .slogan::after {
+        font-size: 2.5rem;
+    }
+
+    .email-link {
+        font-size: 0.9rem;
+    }
+}
+
+/* Estilo para la sección de biografía */
+.bio {
+    margin-bottom: 2rem;
+}
+
+.bio-intro {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.bio-detail, .bio-experience, .bio-focus {
+    font-size: 0.95rem;
+    color: var(--secondary);
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+/* Ajuste responsive */
+@media (max-width: 768px) {
+    .bio-intro {
+        font-size: 1rem;
+    }
+    
+    .bio-detail, .bio-experience, .bio-focus {
+        font-size: 0.9rem;
+    }
+}
